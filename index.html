@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>King Pong</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <h1>King Pong</h1>
+            <p>Modern, minimal table tennis</p>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="control-group">
+            <span class="label">Controls</span>
+            <div class="segmented" role="group" aria-label="Control scheme">
+              <button id="scheme-ws" class="segmented-btn active" type="button">
+                W / S
+              </button>
+              <button id="scheme-arrows" class="segmented-btn" type="button">
+                ↑ / ↓
+              </button>
+            </div>
+          </div>
+          <div class="control-group">
+            <span class="label">Game</span>
+            <div class="button-row">
+              <button id="btn-pause" class="ghost" type="button">Pause</button>
+              <button id="btn-reset" class="ghost" type="button">Reset</button>
+              <button id="btn-exit" class="ghost danger" type="button">
+                Exit
+              </button>
+            </div>
+          </div>
+          <div class="control-group">
+            <span class="label">Difficulty</span>
+            <div class="select-wrap">
+              <select id="difficulty-select" class="select" aria-label="Difficulty">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="play-area">
+        <div class="hud">
+          <div class="score">
+            <span id="player-score">0</span>
+            <span class="divider">:</span>
+            <span id="cpu-score">0</span>
+          </div>
+          <div id="status" class="status">Press Space to start</div>
+          <div class="hints">
+            <span>Pause: P</span>
+            <span>Reset: R</span>
+            <span>Exit: Esc</span>
+          </div>
+        </div>
+        <div class="canvas-shell">
+          <canvas id="game-canvas" width="760" height="420"></canvas>
+          <div id="overlay" class="overlay hidden">
+            <div class="overlay-card">
+              <h2 id="overlay-title">Paused</h2>
+              <p id="overlay-message">
+                Press Space or click Resume to continue.
+              </p>
+              <div class="overlay-actions">
+                <button id="btn-resume" class="primary" type="button">
+                  Resume
+                </button>
+                <button id="btn-overlay-reset" class="ghost" type="button">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
